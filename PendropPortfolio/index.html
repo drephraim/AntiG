@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pen_Drop - Webnovel Author Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Pen_Drop, author of The Last Paragon in the Apocalypse, Primordial Chaos Dragon Tower, and more on Webnovel.">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Background Effects -->
+    <div id="tsparticles"></div>
+    <div class="background-effects">
+        <div class="glow-orb red-orb"></div>
+        <div class="glow-orb gold-orb"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <span class="gold-text">Pen</span>_Drop
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#works">Novels</a></li>
+            <li><a href="#codex">Codex</a></li>
+            <li><a href="https://discord.gg/wFptfB9Sgv" target="_blank" class="btn btn-outline">Join Discord</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gold-text">Pen</span>_Drop
+                </h1>
+                <p class="hero-subtitle">Crafting Realms Where Arrogance Meets Absolute Power.</p>
+                <div class="hero-stats">
+                    <div class="stat"><span class="gold-text">557</span> Days Writing</div>
+                    <div class="stat"><span class="red-text">Global</span> Author</div>
+                </div>
+                <div class="hero-cta">
+                    <a href="#works" class="btn btn-primary">Explore Works</a>
+                    <a href="#codex" class="btn btn-outline">Search Codex</a>
+                </div>
+            </div>
+
+            <div class="scroll-indicator">
+                <a href="#works">
+                    <div class="mouse"></div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Works Section -->
+        <section id="works" class="works">
+            <h2 class="section-title">The <span class="gold-text">Supreme</span> Archives</h2>
+            <div class="works-grid">
+                <!-- Book 1 -->
+                <div class="book-card">
+                    <div class="book-content">
+                        <h3 class="book-title">The Last Paragon in the Apocalypse</h3>
+                        <div class="book-meta">
+                            <span>⭐ 4.35</span>
+                            <span>📚 1,397 Ch</span>
+                            <span>👥 14.5k</span>
+                        </div>
+                        <p class="book-synopsis">After reincarnating multiple times over several centuries, Klaus has
+                            finally returned 50 years into the apocalypse that descended on Earth...</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </div>
+
+                <!-- Book 2 -->
+                <div class="book-card">
+                    <div class="book-content">
+                        <h3 class="book-title">Primordial Chaos Dragon Tower: Harem System</h3>
+                        <div class="book-meta">
+                            <span>⭐ 4.55</span>
+                            <span>📚 1,441 Ch</span>
+                            <span>👥 25.2k</span>
+                        </div>
+                        <p class="book-synopsis">Kent, a handsome human male who chose to become an adult movie
+                            director, receives a Celestial Grade Inheritance Tower. The story follows his path...</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </div>
+
+                <!-- Book 3 -->
+                <div class="book-card">
+                    <div class="book-content">
+                        <h3 class="book-title">The Annihilator: Killer Of Gods</h3>
+                        <div class="book-meta">
+                            <span>⭐ 4.34</span>
+                            <span>📚 320 Ch</span>
+                            <span>👥 1.1k</span>
+                        </div>
+                        <p class="book-synopsis">Karsha, a former US Army general wrongly accused of killing his family,
+                            is transmigrated to a world of cultivation. Awakening as a slave, he rises...</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </div>
+
+                <!-- Book 4 -->
+                <div class="book-card">
+                    <div class="book-content">
+                        <h3 class="book-title">Rebirth Of The Supreme One</h3>
+                        <div class="book-meta">
+                            <span>⭐ 4.23</span>
+                            <span>📚 248 Ch</span>
+                            <span>👥 1.8k</span>
+                        </div>
+                        <p class="book-synopsis">The lives of two beings from different worlds, Rasoul and Clay,
+                            intertwine when the universe is plunged into chaos. Together, with the aid of a rude
+                            system...</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Codex Search Section -->
+        <section id="codex" class="codex">
+            <h2 class="section-title">The <span class="gold-text">Supreme</span> Codex</h2>
+            <div class="codex-container">
+                <p class="codex-desc">Select your local chapter archive folder, then search for any term.</p>
+
+                <div class="archive-selector">
+                    <label for="chapter-folder" class="btn btn-outline" style="cursor: pointer;">
+                        Select Local Archive (Folder)
+                    </label>
+                    <input type="file" id="chapter-folder" webkitdirectory directory multiple style="display: none;">
+                    <span id="loaded-count" style="margin-left: 15px; color: #a0a0b0; font-size: 0.9rem;">0 chapters
+                        loaded</span>
+                </div>
+
+                <div class="search-box">
+                    <input type="text" id="codex-search"
+                        placeholder="Enter search term (e.g., 'Klaus', 'System', 'Karsha')..." disabled>
+                    <button id="search-btn" class="btn btn-primary" disabled>Seek Knowledge</button>
+                </div>
+                <div id="search-results" class="search-results hidden">
+                    <!-- Results injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <h2 class="section-title">The <span class="gold-text">Architect</span></h2>
+            <div class="about-container">
+                <div class="about-content">
+                    <p class="bio-text">"All of My Main Characters are Arrogant, Overpowered, and Handsome."</p>
+                    <div class="about-stats">
+                        <div class="about-stat">
+                            <h4>Joined Webnovel</h4>
+                            <p>Oct 4, 2023</p>
+                        </div>
+                        <div class="about-stat">
+                            <h4>Writing Streak</h4>
+                            <p>557 Days</p>
+                        </div>
+                        <div class="about-stat">
+                            <h4>Total Works</h4>
+                            <p>4 Epic Sagas</p>
+                        </div>
+                    </div>
+                    <div class="about-cta">
+                        <p>Join the community and discuss the latest chapters:</p>
+                        <a href="https://discord.gg/wFptfB9Sgv" target="_blank" class="btn btn-primary">Join the Discord
+                            Server</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="gold-text">Pen</span>_Drop
+            </div>
+            <p>&copy; 2024 Pen_Drop. All narratives and characters belong to the author.</p>
+            <div class="footer-links">
+                <a href="https://www.webnovel.com/profile/4325602497" target="_blank">Webnovel Profile</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

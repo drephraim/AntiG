@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Novel Codex — AI-powered novel chapter search engine. Upload, search, summarize, and explore your novel chapters.">
+    <title>Novel Codex — AI Chapter Engine</title>
+    <link rel="stylesheet" href="styles.css?v=5">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- ── Header ──────────────────────────────────────────────────────── -->
+        <header class="app-header">
+            <a class="logo" href="/">
+                <div class="logo-icon">📖</div>
+                <span class="logo-text">Novel Codex</span>
+            </a>
+            <div class="header-stats">
+                <div class="stat-badge" id="chapter-count-badge">
+                    📚 <span class="count" id="chapter-count">0</span> chapters
+                </div>
+                <div class="stat-badge" id="word-count-badge">
+                    ✍️ <span class="count" id="word-count">0</span> words
+                </div>
+                <button class="clear-btn" id="clear-btn" onclick="clearAllChapters()">🗑️ Clear All</button>
+            </div>
+        </header>
+
+        <!-- ── Main Content ────────────────────────────────────────────────── -->
+        <main class="main-content">
+            <!-- Upload Zone -->
+            <section class="upload-zone" id="upload-zone">
+                <span class="upload-icon">📁</span>
+                <h2 class="upload-title">Drop your novel chapters here</h2>
+                <p class="upload-subtitle">
+                    Drag &amp; drop a folder or <code>.txt</code>/<code>.md</code> files, or browse
+                    <span onclick="document.getElementById('folder-input').click()">folders</span> /
+                    <span onclick="document.getElementById('file-input').click()">files</span>
+                </p>
+                <input type="file" id="file-input" multiple accept=".txt,.md" style="display: none;">
+                <input type="file" id="folder-input" webkitdirectory directory style="display: none;">
+                <div class="upload-progress" id="upload-progress">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                    <span class="progress-text" id="progress-text">Uploading...</span>
+                </div>
+            </section>
+
+            <!-- Search Section -->
+            <section class="search-section" id="search-section">
+                <div class="mode-tabs">
+                    <button class="mode-tab active" data-mode="search" onclick="setMode('search')">
+                        🔍 Search
+                    </button>
+                    <button class="mode-tab" data-mode="ai" onclick="setMode('ai')">
+                        ✨ AI Ask
+                    </button>
+                    <button class="mode-tab" data-mode="summarize" onclick="setMode('summarize')">
+                        📝 Summarize
+                    </button>
+                    <button class="mode-tab" data-mode="mentions" onclick="setMode('mentions')">
+                        👤 Find Mentions
+                    </button>
+                </div>
+
+                <div class="search-bar">
+                    <input type="text" class="search-input" id="search-input"
+                        placeholder="Search across your chapters..."
+                        onkeydown="if(event.key === 'Enter') executeQuery()">
+                    <button class="search-btn" id="search-btn" onclick="executeQuery()">
+                        🔍 <span>Search</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Loading -->
+            <div class="loading-container" id="loading">
+                <div class="spinner"></div>
+                <span class="loading-text" id="loading-text">Searching chapters...</span>
+            </div>
+
+            <!-- Search Results -->
+            <section class="results-section" id="results-section">
+                <div class="results-header">
+                    <span class="results-title" id="results-title"></span>
+                </div>
+                <div class="results-grid" id="results-grid"></div>
+            </section>
+
+            <!-- AI Response -->
+            <section class="ai-response" id="ai-response">
+                <div class="ai-response-card">
+                    <div class="ai-response-label">✨ AI Response</div>
+                    <div class="ai-response-content" id="ai-response-content"></div>
+                </div>
+                <div class="keyword-results-section" id="keyword-results-section" style="display:none;">
+                    <h4 class="keyword-results-title">📍 Direct Keyword Matches</h4>
+                    <div class="results-grid" id="keyword-results-grid"></div>
+                </div>
+            </section>
+
+            <!-- Uploaded Files -->
+            <div class="uploaded-files" id="uploaded-files"></div>
+
+            <!-- Chapters Panel (Segments & Chapters Grid) -->
+            <section class="chapters-panel" id="chapters-panel">
+                <div class="chapters-panel-header">
+                    <span class="chapters-panel-title" style="display: none;">📚 Your Chapters</span>
+                </div>
+
+                <div class="section-title">SEGMENTS</div>
+                <!-- We rename this container to explicitly hold both the newly designed segments grid and lower chapters grid -->
+                <div class="segments-and-chapters-container" id="chapters-list"></div>
+            </section>
+        </main>
+
+        <!-- ── Chapter Viewer Modal ────────────────────────────────────────── -->
+        <div class="chapter-modal-overlay" id="chapter-modal" onclick="closeChapterModal(event)">
+            <div class="chapter-modal">
+                <div class="chapter-modal-header">
+                    <span class="chapter-modal-title" id="chapter-modal-title">Chapter</span>
+                    <button class="chapter-modal-close" onclick="closeChapterModal()">&times;</button>
+                </div>
+                <div class="chapter-modal-body" id="chapter-modal-body"></div>
+            </div>
+        </div>
+
+        <!-- ── Toast Container ─────────────────────────────────────────────── -->
+        <div class="toast-container" id="toast-container"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
