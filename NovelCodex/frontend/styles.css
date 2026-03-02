@@ -1,31 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
 
-/* ── Design Tokens (Polished Light Theme) ────────────────────────────── */
+/* ── Design Tokens (Polished Dark Theme) ────────────────────────────── */
 :root {
-    --bg-primary: #f8fafc;
-    /* Very light slate */
-    --bg-secondary: #ffffff;
-    --bg-tertiary: #f1f5f9;
-    --bg-glass: rgba(255, 255, 255, 0.9);
-    --bg-glass-hover: #f1f5f9;
-    --border-glass: #e2e8f0;
-    --border-glass-hover: #cbd5e1;
+    --bg-primary: #0f172a;
+    /* Dark slate */
+    --bg-secondary: #1e293b;
+    --bg-tertiary: #334155;
+    --bg-glass: rgba(15, 23, 42, 0.75);
+    --bg-glass-hover: rgba(30, 41, 59, 0.85);
+    --border-glass: rgba(255, 255, 255, 0.1);
+    --border-glass-hover: rgba(255, 255, 255, 0.2);
 
-    --accent-primary: #6366f1;
-    /* Indigo */
-    --accent-primary-light: #818cf8;
-    --accent-secondary: #0ea5e9;
-    /* Light Blue */
-    --accent-gradient: linear-gradient(135deg, #6366f1, #a855f7);
+    --accent-primary: #818cf8;
+    /* Indigo light */
+    --accent-primary-light: #a5b4fc;
+    --accent-secondary: #38bdf8;
+    /* Sky Blue */
+    --accent-gradient: linear-gradient(135deg, #818cf8, #c084fc);
     /* Indigo to Purple */
-    --accent-gradient-hover: linear-gradient(135deg, #4f46e5, #9333ea);
-    --accent-glow: rgba(99, 102, 241, 0.2);
-    --accent-cyan-glow: rgba(14, 165, 233, 0.15);
+    --accent-gradient-hover: linear-gradient(135deg, #6366f1, #a855f7);
+    --accent-glow: rgba(129, 140, 248, 0.25);
+    --accent-cyan-glow: rgba(56, 189, 248, 0.2);
 
-    --text-primary: #1e293b;
-    --text-secondary: #475569;
-    --text-muted: #94a3b8;
-    --text-accent: #6366f1;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #64748b;
+    --text-accent: #818cf8;
 
     --success: #10b981;
     --warning: #f59e0b;
