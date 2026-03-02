@@ -6,9 +6,9 @@ from flask_cors import CORS
 from groq import Groq
 
 # ── Configuration ────────────────────────────────────────────────────────────
-# Replace with your actual Groq API key! You can get one for free at console.groq.com
-GROQ_API_KEY = "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"
-client = Groq(api_key=GROQ_API_KEY) if GROQ_API_KEY != "your_actual_groq_api_key_here" else None
+# Set your Groq API key as an environment variable (GROQ_API_KEY)
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
+client = Groq(api_key=GROQ_API_KEY) if GROQ_API_KEY else None
 MODEL_NAME = "llama-3.1-8b-instant"
 
 app = Flask(__name__, static_folder="../frontend", static_url_path="")
